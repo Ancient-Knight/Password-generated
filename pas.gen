@@ -1,0 +1,13 @@
+import random 
+Characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-+"
+Password = int(input("The number of characters in the password required: "))
+def pass_generator(num):
+    password = ''
+    for i in range(num):
+        password += random.choice(Characters)
+    return password
+print('Your password is saved and stored in a folder')
+f = open( 'password.txt', 'w' )
+f.write(pass_generator(Password))
+f.close()
+input()
